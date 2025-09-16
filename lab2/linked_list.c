@@ -72,7 +72,6 @@ void* ll_get_last(node_t* head_list) {
  * - head_list: Pointer to a pointer that refers to the head node of
      the list
  * - to_add: void pointer representing data to be added
- * - size: size of the data to be added
  *
  * Returns:  nothing
  */
@@ -95,7 +94,6 @@ void ll_insert_first(node_t** head_list, void* to_add) {
  * - head_list: Pointer to a pointer that refers to the head node of
      the list
  * - to_add: void pointer representing data to be added
- * - size: size of the data to be added
  *
  * Returns:  nothing
  */
