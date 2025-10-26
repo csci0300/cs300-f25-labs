@@ -3,7 +3,7 @@ comma = ,
 export LC_ALL = C
 
 # Compiler toolchain
-CCPREFIX ?=
+CCPREFIX ?= $(shell build/findccprefix.sh)
 
 ifeq ($(CCPREFIX),)
 ifeq ($(origin CC),default)
@@ -18,7 +18,7 @@ ifeq ($(origin CC),default)
 CC      := $(CCPREFIX)cc
 endif
 ifeq ($(origin CXX),default)
-CXX     := $(CCPREFIX)c++
+CXX     := $(CCPREFIX)g++-13
 endif
 ifeq ($(origin LD),default)
 LD      := $(CCPREFIX)ld
@@ -32,7 +32,7 @@ STRIP   ?= $(CCPREFIX)strip
 
 # Native commands
 HOSTCC  ?= cc
-HOSTCXX ?= c++
+HOSTCXX ?= g++
 TAR     ?= tar
 PERL    ?= perl
 
